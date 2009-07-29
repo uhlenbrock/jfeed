@@ -44,7 +44,8 @@ JFeedItem properties
     * item.description
     * item.updated
     * item.id
-
+	* item.author
+	
 Please see the provided examples for more information.
 
 A basic PHP proxy is also available (proxy.php), if you need to load external

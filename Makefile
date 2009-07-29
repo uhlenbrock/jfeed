@@ -10,7 +10,7 @@ WE = ${BUILD_DIR}/dist/jquery.jfeed.js
 WE_PACK = ${BUILD_DIR}/dist/jquery.jfeed.pack.js
 WE_ARCH = ../jquery.jfeed.tar.gz
 
-MERGE = sed -s -e '1 s/^\xEF\xBB\xBF//' ${JS_FILES} > ${WE}
+MERGE = sed -e '1 s/^\xEF\xBB\xBF//' ${JS_FILES} > ${WE}
 PACKER = perl -I${BUILD_DIR}/packer ${BUILD_DIR}/packer/jsPacker.pl -i ${WE} -o ${WE_PACK} -e62
 
 all: archive

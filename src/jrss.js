@@ -30,7 +30,12 @@ JRss.prototype  = {
             item.description = jQuery(this).find('description').eq(0).text();
             item.updated = jQuery(this).find('pubDate').eq(0).text();
             item.id = jQuery(this).find('guid').eq(0).text();
-            
+			// Fix for Safari
+			if (jQuery(this).find('creator').eq(0).text() != '') {
+				item.author = jQuery(this).find('creator').eq(0).text();
+			} else {
+            	item.author = jQuery(this).find("dc\\:creator").eq(0).text();
+			}
             feed.items.push(item);
         });
     }
